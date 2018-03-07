@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="#C5CAE9"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/videoMain">
+
+    <TextView
+        android:id="@+id/tvVideoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Video Name"
+        android:maxLines="1"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <ImageView
+        android:id="@+id/play"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/ivVideoThumbnail"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/ic_play_circle_filled_black_24dp"/>
+
+    <ImageView
+        android:id="@+id/ivVideoThumbnail"
+        android:layout_below="@id/tvVideoName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="Video Thumbnail"/>
+
+    <TextView
+        android:id="@+id/tvVideoDesc"
+        android:layout_below="@id/play"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:maxLines="3"
+        android:textStyle="italic"/>
+
+</RelativeLayout>
