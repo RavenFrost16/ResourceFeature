@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:background="#C5CAE9"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/pdfMain">
+
+    <TextView
+        android:id="@+id/tvPdfName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pdf Name"
+        android:maxLines="1"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+    <TextView
+        android:id="@+id/tvPdfDesc"
+        android:layout_below="@id/tvPdfName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:text="Pdf Description"
+        android:maxLines="2"
+        android:textStyle="italic"/>
+
+</RelativeLayout>
