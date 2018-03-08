@@ -1,5 +1,6 @@
 package com.example.rashmi.resourcefeature;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -31,18 +32,24 @@ public class Sections extends Fragment {
                 int i=getArguments().getInt("key");
                 final Bundle b = new Bundle();
                 b.putInt("key",i);
-
-                PdfCourseMaterials pdfCourseMaterials = new PdfCourseMaterials();
-                pdfCourseMaterials.setArguments(b);
-                FragmentManager fm = getFragmentManager();
-                int back=fm.getBackStackEntryCount();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.add(R.id.frameQlab,pdfCourseMaterials);
-                if(back>0){
-                    boolean done = getFragmentManager().popBackStackImmediate();
+                String s=null;
+                switch (i){
+                    case 0: s = "android";
+                    break;
+                    case 1: s = "iOS";
+                        break;
+                    case 2: s = "Big Data Engineer";
+                        break;
+                    case 3: s = "Big Data Admin";
+                        break;
+                    case 4: s = "Blockchain";
+                        break;
+                    case 5: s = "Data Scientist";
+                        break;
                 }
-                ft.addToBackStack(null);
-                ft.commit();
+
+                onButtonClick(s);
+
             }
         });
         btnVideo.setOnClickListener(new View.OnClickListener() {
@@ -69,5 +76,21 @@ public class Sections extends Fragment {
 
         return v;
     }
+
+    public void onButtonClick(String s){//s is category
+        //Intent intent=new Intent(MainActivity.this,PdfLinks.class);
+        //intent.putExtra("btnClicked",s);
+        //startActivity(intent);
+
+        Bundle b = new Bundle();
+        b.putString("btnClicked",s);
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.add(R.id.frameQlab,new PdfLinks());
+        ft.addToBackStack(null);
+        ft.commit();
+
+    }
+
 
 }
